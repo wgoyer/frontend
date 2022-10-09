@@ -234,6 +234,7 @@ export const getStates = (
       }
       break;
     case "input_select":
+    case "input_select_rad":
     case "select":
       if (!attribute) {
         result.push(...state.attributes.options);

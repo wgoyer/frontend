@@ -24,6 +24,11 @@ import {
   fetchInputSelect,
   updateInputSelect,
 } from "./input_select";
+import {
+  deleteInputSelectRad,
+  fetchInputSelectRad,
+  updateInputSelectRad,
+} from "./input_select_rad";
 import { deleteInputText, fetchInputText, updateInputText } from "./input_text";
 import { deleteSchedule, fetchSchedule, updateSchedule } from "./schedule";
 import { deleteTimer, fetchTimer, updateTimer } from "./timer";
@@ -58,6 +63,11 @@ export const HELPERS_CRUD = {
     fetch: fetchInputSelect,
     update: updateInputSelect,
     delete: deleteInputSelect,
+  },
+  input_select_rad: {
+    fetch: fetchInputSelectRad,
+    update: updateInputSelectRad,
+    delete: deleteInputSelectRad,
   },
   counter: {
     fetch: fetchCounter,

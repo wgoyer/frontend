@@ -17,6 +17,7 @@ import { createInputButton } from "../../../data/input_button";
 import { createInputDateTime } from "../../../data/input_datetime";
 import { createInputNumber } from "../../../data/input_number";
 import { createInputSelect } from "../../../data/input_select";
+import { createInputSelectRad } from "../../../data/input_select_rad";
 import { createInputText } from "../../../data/input_text";
 import { domainToName } from "../../../data/integration";
 import { createSchedule } from "../../../data/schedule";
@@ -32,6 +33,7 @@ import "./forms/ha-input_button-form";
 import "./forms/ha-input_datetime-form";
 import "./forms/ha-input_number-form";
 import "./forms/ha-input_select-form";
+import "./forms/ha-input_select_rad-form";
 import "./forms/ha-input_text-form";
 import "./forms/ha-schedule-form";
 import "./forms/ha-timer-form";
@@ -44,6 +46,7 @@ const HELPERS = {
   input_number: createInputNumber,
   input_datetime: createInputDateTime,
   input_select: createInputSelect,
+  input_select_rad: createInputSelectRad,
   counter: createCounter,
   timer: createTimer,
   schedule: createSchedule,
@@ -166,7 +169,8 @@ export class DialogHelperDetail extends LitElement {
                   slot="graphic"
                   loading="lazy"
                   src=${brandsUrl({
-                    domain,
+                    domain:
+                      domain === "input_select_rad" ? "input_select" : domain,
                     type: "icon",
                     useFallback: true,
                     darkOptimized: this.hass.themes?.darkMode,
